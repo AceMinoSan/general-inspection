@@ -349,9 +349,25 @@ function openDirector() {
     }, 300);
 }
 function closeDirector() {
-    document.getElementById("directorProfile").style.display = "none";
-    document.getElementById("home").style.display = "block";
-    window.scrollTo(0, 0);
+
+    const home = document.getElementById("home");
+    const profile = document.getElementById("directorProfile");
+
+    profile.classList.remove("active");
+
+    setTimeout(() => {
+
+        profile.style.display = "none";
+
+        home.style.display = "block";
+
+        setTimeout(() => {
+            home.classList.remove("hide");
+        }, 30);
+
+        window.scrollTo(0, 0);
+
+    }, 300);
 }
 </script>
 </body>
