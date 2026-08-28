@@ -546,10 +546,147 @@ textarea {
         margin-top: 40px;
     }
 }
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+    background: #1e1e1e;
+    color: #eeeeee;
+}
+
+body.dark-mode .menu-card {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .menu-card:hover {
+    border-color: #5b7fb5;
+}
+
+body.dark-mode .menu-title {
+    color: #ffffff;
+}
+
+body.dark-mode .menu-description {
+    color: #bbbbbb;
+}
+
+body.dark-mode .director-position,
+body.dark-mode .director-name,
+body.dark-mode .secretary-position {
+    color: #eeeeee;
+}
+
+body.dark-mode .back,
+body.dark-mode .staff-back {
+    color: #7fa6dc;
+}
+
+body.dark-mode .profile-info h1,
+body.dark-mode .biography h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .info-row {
+    border-color: #444444;
+    color: #eeeeee;
+}
+
+body.dark-mode .info-title {
+    color: #ffffff;
+}
+
+body.dark-mode .biography p {
+    color: #cccccc;
+}
+
+body.dark-mode .complaint-page h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .complaint-subtitle {
+    color: #bbbbbb;
+}
+
+body.dark-mode .form-group label {
+    color: #eeeeee;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+    background: #2a2a2a;
+    border-color: #444444;
+    color: #ffffff;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #999999;
+}
+
+body.dark-mode .success-message h2 {
+    color: #7fa6dc;
+}
+
+body.dark-mode .success-message p {
+    color: #bbbbbb;
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+.theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #123b70;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+
+    z-index: 10000;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.08);
+}
+
+body.dark-mode .theme-toggle {
+    background: #333333;
+    color: #ffffff;
+}
 </style>
 </head>
 
 <body>
+
+<button
+    class="theme-toggle"
+    id="themeToggle"
+    onclick="toggleTheme()"
+>
+    🌙
+</button>
 
 <div class="hotline">
     📞 ცხელი ხაზი — 126
@@ -1570,6 +1707,27 @@ function closeInformation() {
         }, 30);
 
     }, 300);
+}
+/* =========================
+   DARK / LIGHT MODE
+========================= */
+
+function toggleTheme() {
+
+    const body = document.body;
+    const button = document.getElementById("themeToggle");
+
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+
+        button.textContent = "☀️";
+
+    } else {
+
+        button.textContent = "🌙";
+
+    }
 }
 </script>
 
