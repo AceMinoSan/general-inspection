@@ -238,6 +238,79 @@ body {
 
 .main.hide {
     opacity: 0;
+
+.main-menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px auto 70px;
+    width: 100%;
+}
+
+.menu-card {
+    width: 280px;
+    min-height: 190px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+    border-color: #123b70;
+}
+
+.menu-icon {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.menu-title {
+    font-size: 21px;
+    color: #123b70;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.menu-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555555;
+}
+
+
+/* ტელეფონისთვის */
+
+@media (max-width: 900px) {
+
+    .main-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .menu-card {
+        width: 100%;
+        max-width: 360px;
+    }
+
 }
 </style>
 </head>
@@ -260,6 +333,36 @@ body {
 </header>
 <!-- MAIN PAGE -->
 <main class="main" id="home">
+    
+    <div class="main-menu">
+
+    <div class="menu-card" onclick="openComplaints()">
+        <div class="menu-icon">📝</div>
+        <div class="menu-title">საჩივრის შეტანა</div>
+        <div class="menu-description">
+            საჩივრის შეტანა შინაგან საქმეთა სამინისტროს თანამშრომელზე
+        </div>
+    </div>
+
+
+    <div class="menu-card" onclick="openContact()">
+        <div class="menu-icon">📞</div>
+        <div class="menu-title">დაგვიკავშირდით</div>
+        <div class="menu-description">
+            გენერალურ ინსპექციასთან დაკავშირება
+        </div>
+    </div>
+
+
+    <div class="menu-card" onclick="openSeniorStaff()">
+        <div class="menu-icon">👥</div>
+        <div class="menu-title">ხელმძღვანელობა</div>
+        <div class="menu-description">
+            გენერალური ინსპექციის დეპარტამენტის ხელმძღვანელობა
+        </div>
+    </div>
+
+</div>
     <section class="director" onclick="openDirector()">
         <img
             src="director.JPG"
