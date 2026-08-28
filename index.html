@@ -3,481 +3,953 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>გენერალური ინსპექციის დეპარტამენტი</title>
+
 <style>
+
 /* =========================
    GENERAL
 ========================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     background: #ffffff;
     color: #111111;
     font-family: Arial, "Noto Sans Georgian", sans-serif;
 }
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
 /* =========================
    HEADER
 ========================= */
+
 .header {
     width: 100%;
     min-height: 125px;
     background: #123b70;
+
     display: flex;
     align-items: center;
+
     padding: 20px 55px;
 }
+
 .emblem {
     width: 82px;
     height: 82px;
     object-fit: contain;
+
     margin-right: 24px;
 }
+
 .header-text {
     color: white;
 }
+
 .header-text .line-one {
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 8px;
 }
+
 .header-text .line-two {
     font-size: 22px;
     font-weight: 500;
 }
+
+
 /* =========================
    MAIN
 ========================= */
+
 .main {
     width: 1100px;
     max-width: 90%;
+
     margin: 70px auto 100px;
+
     opacity: 1;
-    transition: opacity 0.3s ease;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
+
 .main.hide {
     opacity: 0;
+    transform: translateY(-10px);
 }
+
+
 /* =========================
-   THREE MAIN SECTIONS
+   MAIN MENU
 ========================= */
+
 .main-menu {
     display: flex;
     justify-content: center;
     align-items: stretch;
+
     gap: 25px;
+
     width: 100%;
+
     margin: 20px auto 70px;
 }
+
 .menu-card {
     width: 280px;
     min-height: 190px;
+
     background: #ffffff;
+
     border: 1px solid #e1e5ea;
+
     padding: 30px 22px;
+
     text-align: center;
+
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
         border-color 0.3s ease;
 }
+
 .menu-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+
     border-color: #123b70;
 }
+
 .menu-card:active {
     transform: scale(0.98);
 }
+
 .menu-icon {
     font-size: 38px;
     margin-bottom: 18px;
 }
+
 .menu-title {
     font-size: 21px;
+
     color: #123b70;
+
     font-weight: 600;
+
     margin-bottom: 12px;
 }
+
 .menu-description {
     font-size: 14px;
+
     line-height: 1.5;
+
     color: #555555;
 }
+
+
 /* =========================
-   SENIOR STAFF PAGE
+   SENIOR STAFF
 ========================= */
+
 #seniorStaffPage {
     display: none;
+
     width: 1100px;
     max-width: 90%;
+
     margin: 60px auto 100px;
+
     opacity: 0;
+
     transform: translateY(20px);
+
     transition:
         opacity 0.45s ease,
         transform 0.45s ease;
 }
+
 #seniorStaffPage.active {
     opacity: 1;
     transform: translateY(0);
 }
+
 .staff-back {
     border: none;
     background: none;
+
     font-size: 16px;
+
     color: #123b70;
+
     cursor: pointer;
+
     margin-bottom: 45px;
+
     padding: 5px 0;
-    transition: opacity 0.2s ease;
 }
-.staff-back:hover {
-    opacity: 0.65;
-}
+
+
 /* =========================
    DIRECTOR
 ========================= */
+
 .director {
     display: flex;
+
     align-items: center;
+
     width: 850px;
+
     margin-left: 5%;
+
     margin-bottom: 75px;
+
     cursor: pointer;
-    transition: transform 0.25s ease;
+
+    transition:
+        transform 0.25s ease;
 }
+
 .director:hover {
     transform: translateY(-5px);
 }
+
 .director-photo {
     width: 310px;
     height: 420px;
+
     object-fit: cover;
+
     display: block;
-    transition: transform 0.25s ease;
+
+    transition:
+        transform 0.25s ease;
 }
+
 .director:active .director-photo {
     transform: scale(1.035);
 }
+
 .director-info {
     margin-left: 55px;
+
     max-width: 430px;
 }
+
 .director-position {
     font-size: 27px;
+
     line-height: 1.35;
+
     color: #111111;
+
     font-weight: 400;
+
     margin-bottom: 18px;
 }
+
 .director-name {
     font-size: 27px;
+
     line-height: 1.35;
+
     color: #111111;
+
     font-weight: 400;
 }
+
+
 /* =========================
    SECRETARY
 ========================= */
+
 .secretary-card {
     width: 210px;
+
     margin: 0 auto 70px;
+
     text-align: center;
+
     cursor: pointer;
-    transition: transform 0.25s ease;
+
+    transition:
+        transform 0.25s ease;
 }
+
 .secretary-card:hover {
     transform: translateY(-6px);
 }
+
 .secretary-photo {
     width: 210px;
     height: 230px;
+
     object-fit: cover;
+
     display: block;
 }
+
 .secretary-position {
     margin-top: 15px;
+
     font-size: 15px;
+
     line-height: 1.45;
+
     color: #111111;
 }
+
+
 /* =========================
    PROFILE
 ========================= */
+
 .profile {
     display: none;
+
     width: 1100px;
     max-width: 90%;
+
     margin: 60px auto 100px;
+
     opacity: 0;
+
     transform: translateY(20px);
+
     transition:
         opacity 0.45s ease,
         transform 0.45s ease;
 }
+
 .profile.active {
     opacity: 1;
+
     transform: translateY(0);
 }
+
 .back {
     border: none;
+
     background: none;
+
     font-size: 16px;
+
     color: #123b70;
+
     cursor: pointer;
+
     margin-bottom: 40px;
+
     padding: 5px 0;
 }
+
 .profile-content {
     display: flex;
+
     align-items: flex-start;
+
     gap: 55px;
 }
+
 .profile-photo {
     width: 310px;
     height: 420px;
+
     object-fit: cover;
 }
+
 .profile-info {
     max-width: 650px;
 }
+
 .profile-info h1 {
     font-size: 30px;
+
     font-weight: 500;
+
     margin-bottom: 35px;
 }
+
 .info-row {
     display: grid;
+
     grid-template-columns: 180px 1fr;
+
     padding: 15px 0;
-    border-bottom: 1px solid #e5e5e5;
+
+    border-bottom:
+        1px solid #e5e5e5;
+
     font-size: 16px;
+
     line-height: 1.5;
 }
+
 .info-title {
     font-weight: 600;
 }
+
 .biography {
     margin-top: 45px;
 }
+
 .biography h2 {
     font-size: 25px;
+
     font-weight: 500;
+
     margin-bottom: 20px;
 }
+
 .biography p {
     font-size: 16px;
+
     line-height: 1.8;
+
     color: #333333;
 }
+
+
+/* =========================
+   COMPLAINT PAGE
+========================= */
+
+.complaint-page {
+    display: none;
+
+    width: 850px;
+    max-width: 90%;
+
+    margin: 60px auto 100px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+.complaint-page.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.complaint-page h1 {
+    font-size: 32px;
+
+    font-weight: 500;
+
+    color: #111111;
+
+    margin-bottom: 15px;
+}
+
+.complaint-subtitle {
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #555555;
+
+    margin-bottom: 40px;
+}
+
+
+/* FORM */
+
+#complaintForm {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid #d9dee5;
+
+    background: #ffffff;
+
+    padding: 15px 16px;
+
+    font-size: 15px;
+
+    color: #111111;
+
+    outline: none;
+
+    border-radius: 3px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input {
+    height: 50px;
+}
+
+.form-group textarea {
+    min-height: 170px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #123b70;
+
+    box-shadow:
+        0 0 0 3px rgba(18, 59, 112, 0.08);
+}
+
+.submit-complaint {
+    width: 100%;
+
+    min-height: 55px;
+
+    border: none;
+
+    background: #123b70;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    border-radius: 3px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.submit-complaint:hover {
+    background: #0d2d55;
+
+    transform: translateY(-2px);
+}
+
+.submit-complaint:active {
+    transform: scale(0.99);
+}
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success-message {
+    display: none;
+
+    text-align: center;
+
+    padding: 60px 30px;
+}
+
+.success-icon {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+}
+
+.success-message h2 {
+    font-size: 27px;
+
+    font-weight: 500;
+
+    color: #123b70;
+
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    font-size: 16px;
+
+    color: #555555;
+
+    line-height: 1.6;
+}
+
+
 /* =========================
    MOBILE
 ========================= */
+
 @media (max-width: 900px) {
+
     .header {
         height: auto;
+
         padding: 20px 25px;
     }
+
     .emblem {
         width: 65px;
         height: 65px;
+
         margin-right: 15px;
     }
+
     .header-text .line-one,
     .header-text .line-two {
         font-size: 16px;
     }
+
     .main-menu {
         flex-direction: column;
+
         align-items: center;
+
         gap: 18px;
     }
+
     .menu-card {
         width: 100%;
+
         max-width: 360px;
     }
+
     #seniorStaffPage {
         margin-top: 40px;
     }
+
     .director {
         width: 100%;
+
         margin-left: 0;
+
         flex-direction: column;
+
         text-align: center;
     }
+
     .director-photo {
         width: 270px;
+
         height: 370px;
     }
+
     .director-info {
         margin-left: 0;
+
         margin-top: 30px;
     }
+
     .director-position,
     .director-name {
         font-size: 22px;
     }
+
     .secretary-card {
         margin-left: auto;
+
         margin-right: auto;
     }
+
     .profile-content {
         flex-direction: column;
     }
+
     .profile-photo {
         width: 270px;
+
         height: 370px;
     }
+
     .info-row {
         grid-template-columns: 1fr;
+
         gap: 5px;
     }
+
+    .complaint-page {
+        width: 100%;
+
+        margin-top: 40px;
+    }
+
 }
+
 </style>
 </head>
+
+
 <body>
+
+
 <!-- =========================
      HEADER
 ========================= -->
+
 <header class="header">
+
     <img
         src="image.png"
         class="emblem"
         alt="გენერალური ინსპექცია"
     >
+
     <div class="header-text">
+
         <div class="line-one">
             საქართველოს შინაგან საქმეთა სამინისტროს
         </div>
+
         <div class="line-two">
             გენერალური ინსპექციის დეპარტამენტი
         </div>
+
     </div>
+
 </header>
+
+
 <!-- =========================
-     HOME PAGE
+     HOME
 ========================= -->
+
 <main class="main" id="home">
+
     <div class="main-menu">
-        <!-- COMPLAINTS -->
+
+
+        <!-- COMPLAINT -->
+
         <div
             class="menu-card"
             onclick="openComplaints()"
         >
+
             <div class="menu-icon">
                 📝
             </div>
+
             <div class="menu-title">
                 საჩივრის შეტანა
             </div>
+
             <div class="menu-description">
                 საჩივრის შეტანა შინაგან საქმეთა სამინისტროს თანამშრომელზე
             </div>
+
         </div>
+
+
         <!-- CONTACT -->
+
         <div
             class="menu-card"
             onclick="openContact()"
         >
+
             <div class="menu-icon">
                 📞
             </div>
+
             <div class="menu-title">
                 დაგვიკავშირდით
             </div>
+
             <div class="menu-description">
                 გენერალურ ინსპექციასთან დაკავშირება
             </div>
+
         </div>
+
+
         <!-- SENIOR STAFF -->
+
         <div
             class="menu-card"
             onclick="openSeniorStaff()"
         >
+
             <div class="menu-icon">
                 👥
             </div>
+
             <div class="menu-title">
                 ხელმძღვანელობა
             </div>
+
             <div class="menu-description">
                 გენერალური ინსპექციის დეპარტამენტის ხელმძღვანელობა
             </div>
+
         </div>
+
     </div>
+
 </main>
+
 
 <!-- =========================
      COMPLAINT PAGE
 ========================= -->
 
-<section class="complaint-page" id="complaintPage">
+<section
+    class="complaint-page"
+    id="complaintPage"
+>
 
-    <button class="back" onclick="closeComplaints()">
+    <button
+        class="back"
+        onclick="closeComplaints()"
+    >
         ← უკან დაბრუნება
     </button>
 
-    <h1>საჩივრის შეტანა</h1>
+
+    <h1>
+        საჩივრის შეტანა
+    </h1>
+
 
     <p class="complaint-subtitle">
         შეავსეთ ქვემოთ მოცემული ფორმა შინაგან საქმეთა სამინისტროს თანამშრომელზე საჩივრის გასაგზავნად.
     </p>
 
+
     <form id="complaintForm">
 
+
         <div class="form-group">
-            <label>სახელი და გვარი</label>
+
+            <label>
+                სახელი და გვარი
+            </label>
+
             <input
                 type="text"
                 id="complainantName"
                 placeholder="მიუთითეთ სახელი და გვარი"
                 required
             >
+
         </div>
 
+
         <div class="form-group">
-            <label>საკონტაქტო ინფორმაცია</label>
+
+            <label>
+                საკონტაქტო ინფორმაცია
+            </label>
+
             <input
                 type="text"
                 id="contactInfo"
                 placeholder="ტელეფონი ან ელფოსტა"
                 required
             >
+
         </div>
 
+
         <div class="form-group">
-            <label>თანამშრომლის სახელი და გვარი</label>
+
+            <label>
+                თანამშრომლის სახელი და გვარი
+            </label>
+
             <input
                 type="text"
                 id="employeeName"
                 placeholder="მიუთითეთ თანამშრომლის სახელი და გვარი"
                 required
             >
+
         </div>
 
+
         <div class="form-group">
-            <label>შემთხვევის თარიღი</label>
+
+            <label>
+                შემთხვევის თარიღი
+            </label>
+
             <input
                 type="date"
                 id="incidentDate"
                 required
             >
+
         </div>
 
+
         <div class="form-group">
-            <label>საჩივრის აღწერა</label>
+
+            <label>
+                შემთხვევის ადგილი
+            </label>
+
+            <input
+                type="text"
+                id="incidentPlace"
+                placeholder="მიუთითეთ შემთხვევის ადგილი"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                საჩივრის აღწერა
+            </label>
+
             <textarea
                 id="complaintText"
-                rows="7"
                 placeholder="დეტალურად აღწერეთ მომხდარი..."
                 required
             ></textarea>
+
         </div>
+
 
         <button
             type="submit"
@@ -486,353 +958,717 @@ body {
             საჩივრის გაგზავნა
         </button>
 
+
     </form>
+
+
+    <!-- SUCCESS -->
+
+    <div
+        class="success-message"
+        id="successMessage"
+    >
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>
+            საჩივარი წარმატებით გაიგზავნა
+        </h2>
+
+        <p>
+            თქვენი საჩივარი მიღებულია და გადაეგზავნება გენერალურ ინსპექციას.
+        </p>
+
+    </div>
 
 </section>
 
+
 <!-- =========================
-     SENIOR STAFF PAGE
+     SENIOR STAFF
 ========================= -->
+
 <div id="seniorStaffPage">
+
     <button
         class="staff-back"
         onclick="closeSeniorStaff()"
     >
         ← უკან დაბრუნება
     </button>
+
+
     <!-- DIRECTOR -->
+
     <section
         class="director"
         onclick="openDirector()"
     >
+
         <img
             src="director.JPG"
             class="director-photo"
             alt="გენერალური ინსპექციის დეპარტამენტის დირექტორი"
         >
+
         <div class="director-info">
+
             <div class="director-position">
+
                 გენერალური ინსპექციის
                 დეპარტამენტის დირექტორი
+
             </div>
+
             <div class="director-name">
+
                 ეის მინოსანი
+
             </div>
+
         </div>
+
     </section>
+
+
     <!-- SECRETARY -->
+
     <section>
+
         <div
             class="secretary-card"
             onclick="openSecretary()"
         >
+
             <img
                 src="secretary.JPG"
                 class="secretary-photo"
                 alt="გენერალური ინსპექციის დეპარტამენტის დირექტორის მდივანი"
             >
+
             <div class="secretary-position">
+
                 გენერალური ინსპექციის დეპარტამენტის
                 დირექტორის მდივანი
+
                 <br><br>
+
                 ანდრია პენბოი
+
             </div>
+
         </div>
+
     </section>
+
 </div>
+
+
 <!-- =========================
      DIRECTOR PROFILE
 ========================= -->
+
 <section
     class="profile"
     id="directorProfile"
 >
+
     <button
         class="back"
         onclick="closeDirector()"
     >
         ← უკან დაბრუნება
     </button>
+
+
     <div class="profile-content">
+
         <img
             src="director.JPG"
             class="profile-photo"
             alt="ეის მინოსანი"
         >
+
+
         <div class="profile-info">
+
             <h1>
                 ეის მინოსანი
             </h1>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     სახელი გვარი:
                 </div>
+
                 <div>
                     ეის მინოსანი
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     დაბადების თარიღი:
                 </div>
+
                 <div>
                     29 ივნისი
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     დაბადების ადგილი:
                 </div>
+
                 <div>
                     ქ. თბილისი; საქართველო
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     წოდება:
                 </div>
+
                 <div>
                     პოლიციის გენერალ-მაიორი
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     თანამდებობა:
                 </div>
+
                 <div>
                     საქართველოს შინაგან საქმეთა სამინისტროს
                     გენერალური ინსპექციის დეპარტამენტის დირექტორი
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
+
     <div class="biography">
+
         <h2>
             ბიოგრაფია
         </h2>
+
         <p>
+
             მინოსანი ეის ბესარიონის ძე — გამოცდილი და პროფესიონალი
             სახელმწიფო მოხელე, რომელსაც გააჩნია მრავალწლიანი გამოცდილება
             სამართალდამცავ სფეროში.
+
             სხვადასხვა ეტაპზე იგი მუშაობდა FGS-ის გენერალური ინსპექციის
             დეპარტამენტის დირექტორის თანამდებობაზე, სადაც მისი ხელმძღვანელობის
-            პერიოდში დეპარტამენტის საქმიანობა მნიშვნელოვნად გაუმჯობესდა,
-            სამუშაო პროცესები მოწესრიგდა და სამსახურის ეფექტიანობა გაიზარდა.
-            მისი ხელმძღვანელობის პერიოდში განსაკუთრებული ყურადღება ეთმობოდა
-            თანამშრომელთა დისციპლინას, მოქალაქეთა განცხადებებისა და საჩივრების
-            დროულ განხილვას, შიდა კონტროლის გაუმჯობესებასა და სამსახურის
-            პროფესიული სტანდარტების განვითარებას.
-            მიღებული გამოცდილებისა და პროფესიული მიდგომის საფუძველზე,
-            მინოსანი ეის ბესარიონის ძე განაგრძობს საქმიანობას საქართველოს
-            შინაგან საქმეთა სამინისტროს გენერალური ინსპექციის დეპარტამენტის
-            დირექტორის თანამდებობაზე.
+            პერიოდში დეპარტამენტის საქმიანობა მნიშვნელოვნად გაუმჯობესდა.
+
         </p>
+
     </div>
+
 </section>
+
+
 <!-- =========================
      SECRETARY PROFILE
 ========================= -->
+
 <section
     class="profile"
     id="secretaryProfile"
 >
+
     <button
         class="back"
         onclick="closeSecretary()"
     >
         ← უკან დაბრუნება
     </button>
+
+
     <div class="profile-content">
+
         <img
             src="secretary.JPG"
             class="profile-photo"
             alt="ანდრია პენბოი"
         >
+
+
         <div class="profile-info">
+
             <h1>
                 ანდრია პენბოი
             </h1>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     სახელი გვარი:
                 </div>
+
                 <div>
                     ანდრია პენბოი
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     დაბადების თარიღი:
                 </div>
+
                 <div>
                     07 აპრილი
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     დაბადების ადგილი:
                 </div>
+
                 <div>
                     ქ. თბილისი, საქართველო
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     წოდება:
                 </div>
+
                 <div>
                     პოლიციის მაიორი
                 </div>
+
             </div>
+
+
             <div class="info-row">
+
                 <div class="info-title">
                     თანამდებობა:
                 </div>
+
                 <div>
                     საქართველოს შინაგან საქმეთა სამინისტროს
                     გენერალური ინსპექციის დეპარტამენტის
                     დირექტორის მდივანი
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
+
     <div class="biography">
+
         <h2>
             ბიოგრაფია
         </h2>
+
         <p>
+
             პენბოი ანდრია — გამოცდილი და პროფესიონალი
             სამართალდამცავი, რომელსაც გააჩნია შესაბამისი გამოცდილება
             სამართალდამცავ სფეროში.
+
             მისი პროფესიული საქმიანობის განმავლობაში იგი მუშაობდა
             საქართველოს შინაგან საქმეთა სამინისტროს გენერალური ინსპექციის
             დეპარტამენტის სტრუქტურებში, მათ შორის ფგს-ის ფარგლებში,
             განსაკუთრებით მნიშვნელოვან საქმეთა გამომძიებლის თანამდებობაზე.
+
             პროფესიული საქმიანობის სხვადასხვა ეტაპზე ანდრია პენბოი
-            მუშაობდა ეის მინოსანის ხელმძღვანელობით და მის მიერ
-            განსაზღვრული სამუშაო სტანდარტებისა და პროფესიული პრინციპების
-            შესაბამისად.
-            სამუშაოს შესრულებისას განსაკუთრებულ ყურადღებას უთმობდა
-            კანონიერების დაცვას, დისციპლინას, დაკისრებული მოვალეობების
-            პასუხისმგებლობით შესრულებასა და სამსახურის ეფექტიანობას.
-            მიღებული გამოცდილებისა და პროფესიული უნარების საფუძველზე,
-            ანდრია პენბოი აგრძელებს საქმიანობას საქართველოს შინაგან საქმეთა
-            სამინისტროს გენერალური ინსპექციის დეპარტამენტში.
+            მუშაობდა ეის მინოსანის ხელმძღვანელობით.
+
         </p>
+
     </div>
+
 </section>
+
+
 <!-- =========================
      JAVASCRIPT
 ========================= -->
+
 <script>
+
+
 /* =========================
    DIRECTOR
 ========================= */
+
 function openDirector() {
+
     const staff =
         document.getElementById("seniorStaffPage");
+
     const profile =
         document.getElementById("directorProfile");
+
     staff.classList.remove("active");
+
     setTimeout(() => {
+
         staff.style.display = "none";
+
         profile.style.display = "block";
+
         window.scrollTo(0, 0);
+
         setTimeout(() => {
+
             profile.classList.add("active");
+
         }, 30);
+
     }, 300);
+
 }
+
+
 function closeDirector() {
+
     const profile =
         document.getElementById("directorProfile");
+
     const staff =
         document.getElementById("seniorStaffPage");
+
     profile.classList.remove("active");
+
     setTimeout(() => {
+
         profile.style.display = "none";
+
         staff.style.display = "block";
+
         window.scrollTo(0, 0);
+
         setTimeout(() => {
+
             staff.classList.add("active");
+
         }, 30);
+
     }, 300);
+
 }
+
+
 /* =========================
    SECRETARY
 ========================= */
+
 function openSecretary() {
+
     const staff =
         document.getElementById("seniorStaffPage");
+
     const profile =
         document.getElementById("secretaryProfile");
+
     staff.classList.remove("active");
+
     setTimeout(() => {
+
         staff.style.display = "none";
+
         profile.style.display = "block";
+
         window.scrollTo(0, 0);
+
         setTimeout(() => {
+
             profile.classList.add("active");
+
         }, 30);
+
     }, 300);
+
 }
+
+
 function closeSecretary() {
+
     const profile =
         document.getElementById("secretaryProfile");
+
     const staff =
         document.getElementById("seniorStaffPage");
+
     profile.classList.remove("active");
+
     setTimeout(() => {
+
         profile.style.display = "none";
+
         staff.style.display = "block";
+
         window.scrollTo(0, 0);
+
         setTimeout(() => {
+
             staff.classList.add("active");
+
         }, 30);
+
     }, 300);
+
 }
+
+
 /* =========================
    SENIOR STAFF
 ========================= */
+
 function openSeniorStaff() {
+
     const home =
         document.getElementById("home");
+
     const staff =
         document.getElementById("seniorStaffPage");
+
     home.classList.add("hide");
+
     setTimeout(() => {
+
         home.style.display = "none";
+
         staff.style.display = "block";
+
         window.scrollTo(0, 0);
+
         setTimeout(() => {
+
             staff.classList.add("active");
+
         }, 30);
+
     }, 300);
+
 }
+
+
 function closeSeniorStaff() {
+
     const home =
         document.getElementById("home");
+
     const staff =
         document.getElementById("seniorStaffPage");
+
     staff.classList.remove("active");
+
     setTimeout(() => {
+
         staff.style.display = "none";
+
         home.style.display = "block";
+
         window.scrollTo(0, 0);
+
         setTimeout(() => {
+
             home.classList.remove("hide");
+
         }, 30);
+
     }, 300);
+
 }
+
+
 /* =========================
-   TEMPORARY SECTIONS
+   COMPLAINTS
 ========================= */
+
 function openComplaints() {
-    alert("ეს განყოფილება მალე იქნება ხელმისაწვდომი.");
+
+    const home =
+        document.getElementById("home");
+
+    const complaint =
+        document.getElementById("complaintPage");
+
+    home.classList.add("hide");
+
+    setTimeout(() => {
+
+        home.style.display = "none";
+
+        complaint.style.display = "block";
+
+        window.scrollTo(0, 0);
+
+        setTimeout(() => {
+
+            complaint.classList.add("active");
+
+        }, 30);
+
+    }, 300);
+
 }
+
+
+function closeComplaints() {
+
+    const home =
+        document.getElementById("home");
+
+    const complaint =
+        document.getElementById("complaintPage");
+
+    complaint.classList.remove("active");
+
+    setTimeout(() => {
+
+        complaint.style.display = "none";
+
+        home.style.display = "block";
+
+        window.scrollTo(0, 0);
+
+        setTimeout(() => {
+
+            home.classList.remove("hide");
+
+        }, 30);
+
+    }, 300);
+
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
 function openContact() {
-    window.location.href = "https://discord.gg/gnSXF82rt";
+
+    window.location.href =
+        "https://discord.gg/gnSXF82rt";
+
 }
+
+
+/* =========================
+   COMPLAINT FORM
+========================= */
+
+document
+    .getElementById("complaintForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("complainantName").value.trim();
+
+        const contact =
+            document.getElementById("contactInfo").value.trim();
+
+        const employee =
+            document.getElementById("employeeName").value.trim();
+
+        const date =
+            document.getElementById("incidentDate").value;
+
+        const place =
+            document.getElementById("incidentPlace").value.trim();
+
+        const text =
+            document.getElementById("complaintText").value.trim();
+
+
+        if (
+            !name ||
+            !contact ||
+            !employee ||
+            !date ||
+            !place ||
+            !text
+        ) {
+
+            alert(
+                "გთხოვთ შეავსოთ ყველა ველი."
+            );
+
+            return;
+
+        }
+
+
+        /*
+        ==========================================
+        DISCORD CONNECTION WILL BE HERE
+        ==========================================
+
+        На следующем этапе сюда подключим
+        безопасную отправку жалобы в Discord.
+
+        Пока форма показывает успешное
+        сообщение только после подключения
+        Discord-сервера.
+        */
+
+
+        const form =
+            document.getElementById("complaintForm");
+
+        const success =
+            document.getElementById("successMessage");
+
+
+        form.style.display = "none";
+
+        success.style.display = "block";
+
+        window.scrollTo(0, 0);
+
+    });
+
+
 </script>
+
 </body>
 </html>
