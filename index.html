@@ -1745,12 +1745,40 @@ function toggleTheme() {
 
         button.textContent = "☀️";
 
+        localStorage.setItem("theme", "dark");
+
+    } else {
+
+        button.textContent = "🌙";
+
+        localStorage.setItem("theme", "light");
+
+    }
+}
+
+
+/* =========================
+   LOAD SAVED THEME
+========================= */
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    const savedTheme = localStorage.getItem("theme");
+    const button = document.getElementById("themeToggle");
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        button.textContent = "☀️";
+
     } else {
 
         button.textContent = "🌙";
 
     }
-}
+
+});
 </script>
 
 </body>
