@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>გენერალური ინსპექციის დეპარტამენტი</title>
+<style>
+/* =========================
+   ОСНОВА САЙТА
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, "Noto Sans Georgian", sans-serif;
+}
+/* =========================
+   ВЕРХНЯЯ СИНЯЯ ПОЛОСА
+========================= */
+.header {
+    width: 100%;
+    height: 125px;
+    background: #123b70;
+    display: flex;
+    align-items: center;
+    padding-left: 55px;
+}
+/* ГЕРБ */
+.emblem {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    margin-right: 24px;
+}
+/* ТЕКСТ В ШАПКЕ */
+.header-text {
+    color: white;
+}
+.header-text .line-one {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.header-text .line-two {
+    font-size: 22px;
+    font-weight: 500;
+}
+/* =========================
+   ОСНОВНАЯ ЧАСТЬ
+========================= */
+.main {
+    width: 1100px;
+    max-width: 90%;
+    margin: 70px auto 100px;
+}
+/* =========================
+   ДИРЕКТОР
+========================= */
+.director {
+    display: flex;
+    align-items: center;
+    width: 850px;
+    margin-left: 5%;
+    margin-bottom: 75px;
+}
+/* ФОТО ДИРЕКТОРА */
+.director-photo {
+    width: 310px;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+/* ТЕКСТ СПРАВА */
+.director-info {
+    margin-left: 55px;
+    max-width: 430px;
+}
+.director-position {
+    font-size: 27px;
+    line-height: 1.35;
+    color: #111111;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+.director-name {
+    font-size: 27px;
+    line-height: 1.35;
+    color: #111111;
+    font-weight: 400;
+}
+/* =========================
+   ЧЕТЫРЕ СОТРУДНИКА
+========================= */
+.staff {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    width: 920px;
+    margin: 0 auto;
+}
+/* КАРТОЧКА */
+.staff-card {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.25s ease;
+}
+.staff-card:hover {
+    transform: translateY(-7px);
+}
+/* ФОТО */
+.staff-photo {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+/* ДОЛЖНОСТЬ */
+.staff-position {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.45;
+    color: #111111;
+}
+/* =========================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================= */
+@media (max-width: 900px) {
+    .header {
+        height: auto;
+        padding: 20px 25px;
+    }
+    .emblem {
+        width: 65px;
+        height: 65px;
+        margin-right: 15px;
+    }
+    .header-text .line-one,
+    .header-text .line-two {
+        font-size: 16px;
+    }
+    .director {
+        width: 100%;
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    .director-photo {
+        width: 270px;
+        height: 370px;
+    }
+    .director-info {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+    .director-position,
+    .director-name {
+        font-size: 22px;
+    }
+    .staff {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+@media (max-width: 500px) {
+    .staff {
+        grid-template-columns: 1fr;
+    }
+    .staff-photo {
+        height: 300px;
+    }
+}
+</style>
+</head>
+<body>
+<!-- =========================
+     ВЕРХНЯЯ ШАПКА
+========================= -->
+<header class="header">
+    <!-- ТВОЙ ГЕРБ -->
+    <img
+        src="images/emblem.png"
+        class="emblem"
+        alt="გენერალური ინსპექცია"
+    >
+    <div class="header-text">
+        <div class="line-one">
+            საქართველოს შინაგან საქმეთა სამინისტროს
+        </div>
+        <div class="line-two">
+            გენერალური ინსპექციის დეპარტამენტი
+        </div>
+    </div>
+</header>
+<!-- =========================
+     ОСНОВНАЯ ЧАСТЬ
+========================= -->
+<main class="main">
+    <!-- =====================
+         ДИРЕКТОР
+    ====================== -->
+    <section class="director">
+        <img
+            src="images/director.jpg"
+            class="director-photo"
+            alt="დირექტორი"
+        >
+        <div class="director-info">
+            <div class="director-position">
+                გენერალური ინსპექციის
+                დეპარტამენტის დირექტორი
+            </div>
+            <div class="director-name">
+                ეის მინოსანი
+            </div>
+        </div>
+    </section>
+    <!-- =====================
+         СОТРУДНИКИ
+    ====================== -->
+    <section class="staff">
+        <!-- ЗАМЕСТИТЕЛЬ №1 -->
+        <div class="staff-card">
+            <img
+                src="images/deputy1.jpg"
+                class="staff-photo"
+                alt="დირექტორის მოადგილე"
+            >
+            <div class="staff-position">
+                გენერალური ინსპექციის
+                დეპარტამენტის დირექტორის
+                მოადგილე
+            </div>
+        </div>
+        <!-- ЗАМЕСТИТЕЛЬ №2 -->
+        <div class="staff-card">
+            <img
+                src="images/deputy2.jpg"
+                class="staff-photo"
+                alt="დირექტორის მოადგილე"
+            >
+            <div class="staff-position">
+                გენერალური ინსპექციის
+                დეპარტამენტის დირექტორის
+                მოადგილე
+            </div>
+        </div>
+        <!-- СЕКРЕТАРЬ №1 -->
+        <div class="staff-card">
+            <img
+                src="images/secretary1.jpg"
+                class="staff-photo"
+                alt="დირექტორის მდივანი"
+            >
+            <div class="staff-position">
+                გენერალური ინსპექციის
+                დეპარტამენტის დირექტორის
+                მდივანი
+            </div>
+        </div>
+        <!-- СЕКРЕТАРЬ №2 -->
+        <div class="staff-card">
+            <img
+                src="images/secretary2.jpg"
+                class="staff-photo"
+                alt="დირექტორის მდივანი"
+            >
+            <div class="staff-position">
+                გენერალური ინსპექციის
+                დეპარტამენტის დირექტორის
+                მდივანი
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>
