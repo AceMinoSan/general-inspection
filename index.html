@@ -7,11 +7,6 @@
 <title>გენერალური ინსპექციის დეპარტამენტი</title>
 
 <style>
-
-/* =========================
-   GENERAL
-========================= */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,19 +25,12 @@ textarea {
     font-family: inherit;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 .header {
     width: 100%;
     min-height: 125px;
     background: #123b70;
-
     display: flex;
     align-items: center;
-
     padding: 20px 55px;
 }
 
@@ -50,7 +38,6 @@ textarea {
     width: 82px;
     height: 82px;
     object-fit: contain;
-
     margin-right: 24px;
 }
 
@@ -69,22 +56,12 @@ textarea {
     font-weight: 500;
 }
 
-
-/* =========================
-   MAIN
-========================= */
-
 .main {
     width: 1100px;
     max-width: 90%;
-
     margin: 70px auto 100px;
-
     opacity: 1;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .main.hide {
@@ -92,40 +69,24 @@ textarea {
     transform: translateY(-10px);
 }
 
-
-/* =========================
-   MAIN MENU
-========================= */
-
 .main-menu {
     display: flex;
     justify-content: center;
     align-items: stretch;
-
     gap: 25px;
-
     width: 100%;
-
     margin: 20px auto 70px;
 }
 
 .menu-card {
     width: 280px;
     min-height: 190px;
-
     background: #ffffff;
-
     border: 1px solid #e1e5ea;
-
     padding: 30px 22px;
-
     text-align: center;
-
     cursor: pointer;
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.06);
-
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
@@ -134,10 +95,7 @@ textarea {
 
 .menu-card:hover {
     transform: translateY(-8px);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.12);
-
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     border-color: #123b70;
 }
 
@@ -152,42 +110,25 @@ textarea {
 
 .menu-title {
     font-size: 21px;
-
     color: #123b70;
-
     font-weight: 600;
-
     margin-bottom: 12px;
 }
 
 .menu-description {
     font-size: 14px;
-
     line-height: 1.5;
-
     color: #555555;
 }
 
-
-/* =========================
-   SENIOR STAFF
-========================= */
-
 #seniorStaffPage {
     display: none;
-
     width: 1100px;
     max-width: 90%;
-
     margin: 60px auto 100px;
-
     opacity: 0;
-
     transform: translateY(20px);
-
-    transition:
-        opacity 0.45s ease,
-        transform 0.45s ease;
+    transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 #seniorStaffPage.active {
@@ -198,38 +139,21 @@ textarea {
 .staff-back {
     border: none;
     background: none;
-
     font-size: 16px;
-
     color: #123b70;
-
     cursor: pointer;
-
     margin-bottom: 45px;
-
     padding: 5px 0;
 }
 
-
-/* =========================
-   DIRECTOR
-========================= */
-
 .director {
     display: flex;
-
     align-items: center;
-
     width: 850px;
-
     margin-left: 5%;
-
     margin-bottom: 75px;
-
     cursor: pointer;
-
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .director:hover {
@@ -239,63 +163,33 @@ textarea {
 .director-photo {
     width: 310px;
     height: 420px;
-
     object-fit: cover;
-
     display: block;
-
-    transition:
-        transform 0.25s ease;
-}
-
-.director:active .director-photo {
-    transform: scale(1.035);
 }
 
 .director-info {
     margin-left: 55px;
-
     max-width: 430px;
 }
 
-.director-position {
+.director-position,
+.director-name {
     font-size: 27px;
-
     line-height: 1.35;
-
     color: #111111;
-
     font-weight: 400;
+}
 
+.director-position {
     margin-bottom: 18px;
 }
 
-.director-name {
-    font-size: 27px;
-
-    line-height: 1.35;
-
-    color: #111111;
-
-    font-weight: 400;
-}
-
-
-/* =========================
-   SECRETARY
-========================= */
-
 .secretary-card {
     width: 210px;
-
     margin: 0 auto 70px;
-
     text-align: center;
-
     cursor: pointer;
-
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
 .secretary-card:hover {
@@ -305,78 +199,50 @@ textarea {
 .secretary-photo {
     width: 210px;
     height: 230px;
-
     object-fit: cover;
-
     display: block;
 }
 
 .secretary-position {
     margin-top: 15px;
-
     font-size: 15px;
-
     line-height: 1.45;
-
-    color: #111111;
 }
-
-
-/* =========================
-   PROFILE
-========================= */
 
 .profile {
     display: none;
-
     width: 1100px;
     max-width: 90%;
-
     margin: 60px auto 100px;
-
     opacity: 0;
-
     transform: translateY(20px);
-
-    transition:
-        opacity 0.45s ease,
-        transform 0.45s ease;
+    transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 .profile.active {
     opacity: 1;
-
     transform: translateY(0);
 }
 
 .back {
     border: none;
-
     background: none;
-
     font-size: 16px;
-
     color: #123b70;
-
     cursor: pointer;
-
     margin-bottom: 40px;
-
     padding: 5px 0;
 }
 
 .profile-content {
     display: flex;
-
     align-items: flex-start;
-
     gap: 55px;
 }
 
 .profile-photo {
     width: 310px;
     height: 420px;
-
     object-fit: cover;
 }
 
@@ -386,24 +252,16 @@ textarea {
 
 .profile-info h1 {
     font-size: 30px;
-
     font-weight: 500;
-
     margin-bottom: 35px;
 }
 
 .info-row {
     display: grid;
-
     grid-template-columns: 180px 1fr;
-
     padding: 15px 0;
-
-    border-bottom:
-        1px solid #e5e5e5;
-
+    border-bottom: 1px solid #e5e5e5;
     font-size: 16px;
-
     line-height: 1.5;
 }
 
@@ -417,73 +275,42 @@ textarea {
 
 .biography h2 {
     font-size: 25px;
-
     font-weight: 500;
-
     margin-bottom: 20px;
 }
 
 .biography p {
     font-size: 16px;
-
     line-height: 1.8;
-
     color: #333333;
 }
 
-
-/* =========================
-   COMPLAINT PAGE
-========================= */
-
 .complaint-page {
     display: none;
-
     width: 850px;
     max-width: 90%;
-
     margin: 60px auto 100px;
-
     opacity: 0;
-
     transform: translateY(20px);
-
-    transition:
-        opacity 0.45s ease,
-        transform 0.45s ease;
+    transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
 .complaint-page.active {
     opacity: 1;
-
     transform: translateY(0);
 }
 
 .complaint-page h1 {
     font-size: 32px;
-
     font-weight: 500;
-
-    color: #111111;
-
     margin-bottom: 15px;
 }
 
 .complaint-subtitle {
     font-size: 16px;
-
     line-height: 1.6;
-
     color: #555555;
-
     margin-bottom: 40px;
-}
-
-
-/* FORM */
-
-#complaintForm {
-    width: 100%;
 }
 
 .form-group {
@@ -492,35 +319,21 @@ textarea {
 
 .form-group label {
     display: block;
-
     font-size: 15px;
-
     font-weight: 600;
-
     margin-bottom: 9px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-
     border: 1px solid #d9dee5;
-
     background: #ffffff;
-
     padding: 15px 16px;
-
     font-size: 15px;
-
     color: #111111;
-
     outline: none;
-
     border-radius: 3px;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 .form-group input {
@@ -529,108 +342,71 @@ textarea {
 
 .form-group textarea {
     min-height: 170px;
-
     resize: vertical;
-
     line-height: 1.6;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #123b70;
-
-    box-shadow:
-        0 0 0 3px rgba(18, 59, 112, 0.08);
+    box-shadow: 0 0 0 3px rgba(18,59,112,0.08);
 }
 
 .submit-complaint {
     width: 100%;
-
     min-height: 55px;
-
     border: none;
-
     background: #123b70;
-
     color: white;
-
     font-size: 16px;
-
     font-weight: 600;
-
     cursor: pointer;
-
     border-radius: 3px;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
 }
 
 .submit-complaint:hover {
     background: #0d2d55;
-
-    transform: translateY(-2px);
 }
 
-.submit-complaint:active {
-    transform: scale(0.99);
+.submit-complaint:disabled {
+    opacity: 0.7;
+    cursor: wait;
 }
-
-
-/* =========================
-   SUCCESS MESSAGE
-========================= */
 
 .success-message {
     display: none;
-
     text-align: center;
-
     padding: 60px 30px;
 }
 
 .success-icon {
     font-size: 55px;
-
     margin-bottom: 20px;
 }
 
 .success-message h2 {
     font-size: 27px;
-
     font-weight: 500;
-
     color: #123b70;
-
     margin-bottom: 15px;
 }
 
 .success-message p {
     font-size: 16px;
-
     color: #555555;
-
     line-height: 1.6;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 900px) {
 
     .header {
         height: auto;
-
         padding: 20px 25px;
     }
 
     .emblem {
         width: 65px;
         height: 65px;
-
         margin-right: 15px;
     }
 
@@ -641,41 +417,29 @@ textarea {
 
     .main-menu {
         flex-direction: column;
-
         align-items: center;
-
         gap: 18px;
     }
 
     .menu-card {
         width: 100%;
-
         max-width: 360px;
-    }
-
-    #seniorStaffPage {
-        margin-top: 40px;
     }
 
     .director {
         width: 100%;
-
         margin-left: 0;
-
         flex-direction: column;
-
         text-align: center;
     }
 
     .director-photo {
         width: 270px;
-
         height: 370px;
     }
 
     .director-info {
         margin-left: 0;
-
         margin-top: 30px;
     }
 
@@ -684,46 +448,29 @@ textarea {
         font-size: 22px;
     }
 
-    .secretary-card {
-        margin-left: auto;
-
-        margin-right: auto;
-    }
-
     .profile-content {
         flex-direction: column;
     }
 
     .profile-photo {
         width: 270px;
-
         height: 370px;
     }
 
     .info-row {
         grid-template-columns: 1fr;
-
         gap: 5px;
     }
 
     .complaint-page {
         width: 100%;
-
         margin-top: 40px;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header class="header">
 
@@ -748,25 +495,13 @@ textarea {
 </header>
 
 
-<!-- =========================
-     HOME
-========================= -->
-
 <main class="main" id="home">
 
     <div class="main-menu">
 
+        <div class="menu-card" onclick="openComplaints()">
 
-        <!-- COMPLAINT -->
-
-        <div
-            class="menu-card"
-            onclick="openComplaints()"
-        >
-
-            <div class="menu-icon">
-                📝
-            </div>
+            <div class="menu-icon">📝</div>
 
             <div class="menu-title">
                 საჩივრის შეტანა
@@ -779,16 +514,9 @@ textarea {
         </div>
 
 
-        <!-- CONTACT -->
+        <div class="menu-card" onclick="openContact()">
 
-        <div
-            class="menu-card"
-            onclick="openContact()"
-        >
-
-            <div class="menu-icon">
-                📞
-            </div>
+            <div class="menu-icon">📞</div>
 
             <div class="menu-title">
                 დაგვიკავშირდით
@@ -801,16 +529,9 @@ textarea {
         </div>
 
 
-        <!-- SENIOR STAFF -->
+        <div class="menu-card" onclick="openSeniorStaff()">
 
-        <div
-            class="menu-card"
-            onclick="openSeniorStaff()"
-        >
-
-            <div class="menu-icon">
-                👥
-            </div>
+            <div class="menu-icon">👥</div>
 
             <div class="menu-title">
                 ხელმძღვანელობა
@@ -827,27 +548,15 @@ textarea {
 </main>
 
 
-<!-- =========================
-     COMPLAINT PAGE
-========================= -->
+<section class="complaint-page" id="complaintPage">
 
-<section
-    class="complaint-page"
-    id="complaintPage"
->
-
-    <button
-        class="back"
-        onclick="closeComplaints()"
-    >
+    <button class="back" onclick="closeComplaints()">
         ← უკან დაბრუნება
     </button>
-
 
     <h1>
         საჩივრის შეტანა
     </h1>
-
 
     <p class="complaint-subtitle">
         შეავსეთ ქვემოთ მოცემული ფორმა შინაგან საქმეთა სამინისტროს თანამშრომელზე საჩივრის გასაგზავნად.
@@ -855,7 +564,6 @@ textarea {
 
 
     <form id="complaintForm">
-
 
         <div class="form-group">
 
@@ -944,6 +652,7 @@ textarea {
 
             <textarea
                 id="complaintText"
+                rows="7"
                 placeholder="დეტალურად აღწერეთ მომხდარი..."
                 required
             ></textarea>
@@ -958,11 +667,8 @@ textarea {
             საჩივრის გაგზავნა
         </button>
 
-
     </form>
 
-
-    <!-- SUCCESS -->
 
     <div
         class="success-message"
@@ -986,10 +692,6 @@ textarea {
 </section>
 
 
-<!-- =========================
-     SENIOR STAFF
-========================= -->
-
 <div id="seniorStaffPage">
 
     <button
@@ -999,8 +701,6 @@ textarea {
         ← უკან დაბრუნება
     </button>
 
-
-    <!-- DIRECTOR -->
 
     <section
         class="director"
@@ -1016,24 +716,18 @@ textarea {
         <div class="director-info">
 
             <div class="director-position">
-
                 გენერალური ინსპექციის
                 დეპარტამენტის დირექტორი
-
             </div>
 
             <div class="director-name">
-
                 ეის მინოსანი
-
             </div>
 
         </div>
 
     </section>
 
-
-    <!-- SECRETARY -->
 
     <section>
 
@@ -1066,22 +760,11 @@ textarea {
 </div>
 
 
-<!-- =========================
-     DIRECTOR PROFILE
-========================= -->
+<section class="profile" id="directorProfile">
 
-<section
-    class="profile"
-    id="directorProfile"
->
-
-    <button
-        class="back"
-        onclick="closeDirector()"
-    >
+    <button class="back" onclick="closeDirector()">
         ← უკან დაბრუნება
     </button>
-
 
     <div class="profile-content">
 
@@ -1091,77 +774,56 @@ textarea {
             alt="ეის მინოსანი"
         >
 
-
         <div class="profile-info">
 
             <h1>
                 ეის მინოსანი
             </h1>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     სახელი გვარი:
                 </div>
-
                 <div>
                     ეის მინოსანი
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     დაბადების თარიღი:
                 </div>
-
                 <div>
                     29 ივნისი
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     დაბადების ადგილი:
                 </div>
-
                 <div>
                     ქ. თბილისი; საქართველო
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     წოდება:
                 </div>
-
                 <div>
                     პოლიციის გენერალ-მაიორი
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     თანამდებობა:
                 </div>
-
                 <div>
                     საქართველოს შინაგან საქმეთა სამინისტროს
                     გენერალური ინსპექციის დეპარტამენტის დირექტორი
                 </div>
-
             </div>
 
         </div>
@@ -1176,7 +838,6 @@ textarea {
         </h2>
 
         <p>
-
             მინოსანი ეის ბესარიონის ძე — გამოცდილი და პროფესიონალი
             სახელმწიფო მოხელე, რომელსაც გააჩნია მრავალწლიანი გამოცდილება
             სამართალდამცავ სფეროში.
@@ -1184,7 +845,6 @@ textarea {
             სხვადასხვა ეტაპზე იგი მუშაობდა FGS-ის გენერალური ინსპექციის
             დეპარტამენტის დირექტორის თანამდებობაზე, სადაც მისი ხელმძღვანელობის
             პერიოდში დეპარტამენტის საქმიანობა მნიშვნელოვნად გაუმჯობესდა.
-
         </p>
 
     </div>
@@ -1192,22 +852,11 @@ textarea {
 </section>
 
 
-<!-- =========================
-     SECRETARY PROFILE
-========================= -->
+<section class="profile" id="secretaryProfile">
 
-<section
-    class="profile"
-    id="secretaryProfile"
->
-
-    <button
-        class="back"
-        onclick="closeSecretary()"
-    >
+    <button class="back" onclick="closeSecretary()">
         ← უკან დაბრუნება
     </button>
-
 
     <div class="profile-content">
 
@@ -1217,78 +866,57 @@ textarea {
             alt="ანდრია პენბოი"
         >
 
-
         <div class="profile-info">
 
             <h1>
                 ანდრია პენბოი
             </h1>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     სახელი გვარი:
                 </div>
-
                 <div>
                     ანდრია პენბოი
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     დაბადების თარიღი:
                 </div>
-
                 <div>
                     07 აპრილი
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     დაბადების ადგილი:
                 </div>
-
                 <div>
                     ქ. თბილისი, საქართველო
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     წოდება:
                 </div>
-
                 <div>
                     პოლიციის მაიორი
                 </div>
-
             </div>
 
-
             <div class="info-row">
-
                 <div class="info-title">
                     თანამდებობა:
                 </div>
-
                 <div>
                     საქართველოს შინაგან საქმეთა სამინისტროს
                     გენერალური ინსპექციის დეპარტამენტის
                     დირექტორის მდივანი
                 </div>
-
             </div>
 
         </div>
@@ -1303,7 +931,6 @@ textarea {
         </h2>
 
         <p>
-
             პენბოი ანდრია — გამოცდილი და პროფესიონალი
             სამართალდამცავი, რომელსაც გააჩნია შესაბამისი გამოცდილება
             სამართალდამცავ სფეროში.
@@ -1315,7 +942,6 @@ textarea {
 
             პროფესიული საქმიანობის სხვადასხვა ეტაპზე ანდრია პენბოი
             მუშაობდა ეის მინოსანის ხელმძღვანელობით.
-
         </p>
 
     </div>
@@ -1323,12 +949,7 @@ textarea {
 </section>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
-
 
 /* =========================
    DIRECTOR
@@ -1336,59 +957,45 @@ textarea {
 
 function openDirector() {
 
-    const staff =
-        document.getElementById("seniorStaffPage");
-
-    const profile =
-        document.getElementById("directorProfile");
+    const staff = document.getElementById("seniorStaffPage");
+    const profile = document.getElementById("directorProfile");
 
     staff.classList.remove("active");
 
     setTimeout(() => {
 
         staff.style.display = "none";
-
         profile.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             profile.classList.add("active");
-
         }, 30);
 
     }, 300);
-
 }
 
 
 function closeDirector() {
 
-    const profile =
-        document.getElementById("directorProfile");
-
-    const staff =
-        document.getElementById("seniorStaffPage");
+    const profile = document.getElementById("directorProfile");
+    const staff = document.getElementById("seniorStaffPage");
 
     profile.classList.remove("active");
 
     setTimeout(() => {
 
         profile.style.display = "none";
-
         staff.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             staff.classList.add("active");
-
         }, 30);
 
     }, 300);
-
 }
 
 
@@ -1398,59 +1005,45 @@ function closeDirector() {
 
 function openSecretary() {
 
-    const staff =
-        document.getElementById("seniorStaffPage");
-
-    const profile =
-        document.getElementById("secretaryProfile");
+    const staff = document.getElementById("seniorStaffPage");
+    const profile = document.getElementById("secretaryProfile");
 
     staff.classList.remove("active");
 
     setTimeout(() => {
 
         staff.style.display = "none";
-
         profile.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             profile.classList.add("active");
-
         }, 30);
 
     }, 300);
-
 }
 
 
 function closeSecretary() {
 
-    const profile =
-        document.getElementById("secretaryProfile");
-
-    const staff =
-        document.getElementById("seniorStaffPage");
+    const profile = document.getElementById("secretaryProfile");
+    const staff = document.getElementById("seniorStaffPage");
 
     profile.classList.remove("active");
 
     setTimeout(() => {
 
         profile.style.display = "none";
-
         staff.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             staff.classList.add("active");
-
         }, 30);
 
     }, 300);
-
 }
 
 
@@ -1460,59 +1053,45 @@ function closeSecretary() {
 
 function openSeniorStaff() {
 
-    const home =
-        document.getElementById("home");
-
-    const staff =
-        document.getElementById("seniorStaffPage");
+    const home = document.getElementById("home");
+    const staff = document.getElementById("seniorStaffPage");
 
     home.classList.add("hide");
 
     setTimeout(() => {
 
         home.style.display = "none";
-
         staff.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             staff.classList.add("active");
-
         }, 30);
 
     }, 300);
-
 }
 
 
 function closeSeniorStaff() {
 
-    const home =
-        document.getElementById("home");
-
-    const staff =
-        document.getElementById("seniorStaffPage");
+    const home = document.getElementById("home");
+    const staff = document.getElementById("seniorStaffPage");
 
     staff.classList.remove("active");
 
     setTimeout(() => {
 
         staff.style.display = "none";
-
         home.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             home.classList.remove("hide");
-
         }, 30);
 
     }, 300);
-
 }
 
 
@@ -1522,59 +1101,45 @@ function closeSeniorStaff() {
 
 function openComplaints() {
 
-    const home =
-        document.getElementById("home");
-
-    const complaint =
-        document.getElementById("complaintPage");
+    const home = document.getElementById("home");
+    const complaint = document.getElementById("complaintPage");
 
     home.classList.add("hide");
 
     setTimeout(() => {
 
         home.style.display = "none";
-
         complaint.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             complaint.classList.add("active");
-
         }, 30);
 
     }, 300);
-
 }
 
 
 function closeComplaints() {
 
-    const home =
-        document.getElementById("home");
-
-    const complaint =
-        document.getElementById("complaintPage");
+    const home = document.getElementById("home");
+    const complaint = document.getElementById("complaintPage");
 
     complaint.classList.remove("active");
 
     setTimeout(() => {
 
         complaint.style.display = "none";
-
         home.style.display = "block";
 
         window.scrollTo(0, 0);
 
         setTimeout(() => {
-
             home.classList.remove("hide");
-
         }, 30);
 
     }, 300);
-
 }
 
 
@@ -1591,82 +1156,239 @@ function openContact() {
 
 
 /* =========================
+   DISCORD WEBHOOK
+========================= */
+
+const DISCORD_WEBHOOK =
+    "https://discord.com/api/webhooks/1542764523809804331/CtcluSmgeIvTPEycFQ5r1rh_eBOw2VMvHCm-w4cREK-zjqmv_bNdu_mTD30LrAwbrrYf";
+
+
+/* =========================
    COMPLAINT FORM
 ========================= */
 
 document
-    .getElementById("complaintForm")
-    .addEventListener("submit", function(event) {
+.getElementById("complaintForm")
+.addEventListener("submit", async function(event) {
 
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById("complainantName").value.trim();
-
-        const contact =
-            document.getElementById("contactInfo").value.trim();
-
-        const employee =
-            document.getElementById("employeeName").value.trim();
-
-        const date =
-            document.getElementById("incidentDate").value;
-
-        const place =
-            document.getElementById("incidentPlace").value.trim();
-
-        const text =
-            document.getElementById("complaintText").value.trim();
+    event.preventDefault();
 
 
-        if (
-            !name ||
-            !contact ||
-            !employee ||
-            !date ||
-            !place ||
-            !text
-        ) {
+    const name =
+        document.getElementById("complainantName").value.trim();
 
-            alert(
-                "გთხოვთ შეავსოთ ყველა ველი."
+    const contact =
+        document.getElementById("contactInfo").value.trim();
+
+    const employee =
+        document.getElementById("employeeName").value.trim();
+
+    const date =
+        document.getElementById("incidentDate").value;
+
+    const place =
+        document.getElementById("incidentPlace").value.trim();
+
+    const text =
+        document.getElementById("complaintText").value.trim();
+
+
+    if (
+        !name ||
+        !contact ||
+        !employee ||
+        !date ||
+        !place ||
+        !text
+    ) {
+
+        alert(
+            "გთხოვთ შეავსოთ ყველა ველი."
+        );
+
+        return;
+    }
+
+
+    const button =
+        document.querySelector(".submit-complaint");
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "იგზავნება...";
+
+
+    const payload = {
+
+        username:
+            "გენერალური ინსპექცია",
+
+        embeds: [
+
+            {
+
+                title:
+                    "📝 ახალი საჩივარი",
+
+                description:
+                    "გენერალურ ინსპექციაში ვებ-გვერდიდან შემოვიდა ახალი საჩივარი.",
+
+                color:
+                    11907888,
+
+                fields: [
+
+                    {
+                        name:
+                            "👤 მომჩივნის სახელი და გვარი",
+
+                        value:
+                            name,
+
+                        inline:
+                            false
+                    },
+
+                    {
+                        name:
+                            "📞 საკონტაქტო ინფორმაცია",
+
+                        value:
+                            contact,
+
+                        inline:
+                            false
+                    },
+
+                    {
+                        name:
+                            "👮 თანამშრომლის სახელი და გვარი",
+
+                        value:
+                            employee,
+
+                        inline:
+                            false
+                    },
+
+                    {
+                        name:
+                            "📅 შემთხვევის თარიღი",
+
+                        value:
+                            date,
+
+                        inline:
+                            true
+                    },
+
+                    {
+                        name:
+                            "📍 შემთხვევის ადგილი",
+
+                        value:
+                            place,
+
+                        inline:
+                            true
+                    },
+
+                    {
+                        name:
+                            "📄 საჩივრის აღწერა",
+
+                        value:
+                            text,
+
+                        inline:
+                            false
+                    }
+
+                ],
+
+                footer: {
+
+                    text:
+                        "General Inspection | გენერალური ინსპექცია"
+
+                },
+
+                timestamp:
+                    new Date().toISOString()
+
+            }
+
+        ]
+
+    };
+
+
+    try {
+
+        const response =
+            await fetch(
+                DISCORD_WEBHOOK,
+                {
+
+                    method:
+                        "POST",
+
+                    headers:
+                        {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                    body:
+                        JSON.stringify(payload)
+
+                }
             );
 
-            return;
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Discord webhook error: " +
+                response.status
+            );
 
         }
 
 
-        /*
-        ==========================================
-        DISCORD CONNECTION WILL BE HERE
-        ==========================================
-
-        На следующем этапе сюда подключим
-        безопасную отправку жалобы в Discord.
-
-        Пока форма показывает успешное
-        сообщение только после подключения
-        Discord-сервера.
-        */
+        document
+        .getElementById("complaintForm")
+        .style.display = "none";
 
 
-        const form =
-            document.getElementById("complaintForm");
+        document
+        .getElementById("successMessage")
+        .style.display = "block";
 
-        const success =
-            document.getElementById("successMessage");
-
-
-        form.style.display = "none";
-
-        success.style.display = "block";
 
         window.scrollTo(0, 0);
 
-    });
 
+    } catch (error) {
+
+        console.error(error);
+
+
+        alert(
+            "საჩივრის გაგზავნისას მოხდა შეცდომა. გთხოვთ სცადოთ ხელახლა."
+        );
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "საჩივრის გაგზავნა";
+
+    }
+
+});
 
 </script>
 
