@@ -411,6 +411,85 @@ body {
         </div>
     </div>
 </main>
+
+<!-- =========================
+     COMPLAINT PAGE
+========================= -->
+
+<section class="complaint-page" id="complaintPage">
+
+    <button class="back" onclick="closeComplaints()">
+        ← უკან დაბრუნება
+    </button>
+
+    <h1>საჩივრის შეტანა</h1>
+
+    <p class="complaint-subtitle">
+        შეავსეთ ქვემოთ მოცემული ფორმა შინაგან საქმეთა სამინისტროს თანამშრომელზე საჩივრის გასაგზავნად.
+    </p>
+
+    <form id="complaintForm">
+
+        <div class="form-group">
+            <label>სახელი და გვარი</label>
+            <input
+                type="text"
+                id="complainantName"
+                placeholder="მიუთითეთ სახელი და გვარი"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>საკონტაქტო ინფორმაცია</label>
+            <input
+                type="text"
+                id="contactInfo"
+                placeholder="ტელეფონი ან ელფოსტა"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>თანამშრომლის სახელი და გვარი</label>
+            <input
+                type="text"
+                id="employeeName"
+                placeholder="მიუთითეთ თანამშრომლის სახელი და გვარი"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>შემთხვევის თარიღი</label>
+            <input
+                type="date"
+                id="incidentDate"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label>საჩივრის აღწერა</label>
+            <textarea
+                id="complaintText"
+                rows="7"
+                placeholder="დეტალურად აღწერეთ მომხდარი..."
+                required
+            ></textarea>
+        </div>
+
+        <button
+            type="submit"
+            class="submit-complaint"
+        >
+            საჩივრის გაგზავნა
+        </button>
+
+    </form>
+
+</section>
+
 <!-- =========================
      SENIOR STAFF PAGE
 ========================= -->
