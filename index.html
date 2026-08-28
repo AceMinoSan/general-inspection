@@ -396,7 +396,64 @@ textarea {
     color: #555555;
     line-height: 1.6;
 }
+.information-page {
+    display: none;
 
+    width: 900px;
+    max-width: 90%;
+
+    margin: 60px auto 100px;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+.information-page.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.information-page h1 {
+    font-size: 32px;
+    font-weight: 500;
+
+    color: #111111;
+
+    margin-bottom: 40px;
+}
+
+.information-text {
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #333333;
+}
+
+.information-text p {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+
+    .information-page {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .information-page h1 {
+        font-size: 27px;
+    }
+
+    .information-text {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+}
 @media (max-width: 900px) {
 
     .header {
@@ -543,6 +600,20 @@ textarea {
 
         </div>
 
+        <div class="menu-card" onclick="openInformation()">
+
+            <div class="menu-icon">ℹ️</div>
+
+            <div class="menu-title">
+                ინფორმაცია
+            </div>
+
+            <div class="menu-description">
+                ინფორმაცია გენერალური ინსპექციის დეპარტამენტის შესახებ
+            </div>
+
+        </div>
+        
     </div>
 
 </main>
@@ -948,6 +1019,45 @@ textarea {
 
 </section>
 
+<section class="information-page" id="informationPage">
+
+    <button class="back" onclick="closeInformation()">
+        ← უკან დაბრუნება
+    </button>
+
+    <h1>
+        გენერალური ინსპექცია
+    </h1>
+
+    <div class="information-text">
+
+        <p>
+            გენერალური ინსპექცია (დეპარტამენტი) წარმოადგენს საქართველოს შინაგან საქმეთა სამინისტროს სტრუქტურულ დანაყოფს, რომელიც თავისი კომპეტენციის ფარგლებში ახორციელებს შიდაუწყებრივ კონტროლს შსს-ის ქვედანაყოფების საქმიანობაზე. გენერალური ინსპექცია ანგარიშვალდებულია უშუალოდ საქართველოს შინაგან საქმეთა მინისტრის წინაშე.
+        </p>
+
+        <p>
+            გენერალური ინსპექციის დეპარტამენტი, მის წინაშე მდგარი ამოცანებიდან გამომდინარე, უფლებამოსილია განახორციელოს სამინისტროს სისტემაში საქართველოს კანონმდებლობის მოთხოვნათა განუხრელი შესრულების კონტროლი.
+        </p>
+
+        <p>
+            გენერალური ინსპექცია, თავისი კომპეტენციის ფარგლებში, გამოავლენს სამინისტროს სისტემაში ეთიკის, დისციპლინური ნორმების დარღვევის, სამსახურებრივი მოვალეობების არაჯეროვანი შესრულებისა და კონკრეტულ მართლსაწინააღმდეგო ქმედებათა ჩადენის ფაქტებს და ახდენს სათანადო რეაგირებას.
+        </p>
+
+        <p>
+            სამინისტროს მომსახურეთა მიერ კანონმდებლობის დარღვევის ფაქტების ხელშემწყობი მიზეზების დადგენის, სამინისტროს სტრუქტურული ერთეულების საქმიანობაში არსებული დარღვევებისა და ნაკლოვანებების გამოვლენის შემდეგ აღმოჩენილი ხარვეზების, მათი გამომწვევი მიზეზების აღმოფხვრისა და პრევენციის მიზნით გენერალური ინსპექცია შეიმუშავებს შესაბამის რეკომენდაციებს.
+        </p>
+
+        <p>
+            შსს-ის ერთიანი საინფორმაციო პოლიტიკის ფარგლებში, ფუნქციონირებს გენერალური ინსპექციის ცხელი ხაზი (126), რომელიც ზრდის სამოქალაქო საზოგადოების შსს-ზე კონტროლის ეფექტიანობას.
+        </p>
+
+        <p>
+            მოქალაქეთა ფართო ფენების მხრიდან კომუნიკაციის ამ საშუალების გამოყენება ხელს უწყობს სამინისტროში დისციპლინური ნორმების დარღვევის, სამსახურებრივი მოვალეობების არასათანადო შესრულებისა და კანონსაწინააღმდეგო ქმედებათა ჩადენის აქტების გამოვლენასა და მათზე ოპერატიულ რეაგირებას.
+        </p>
+
+    </div>
+
+</section>
 
 <script>
 
@@ -1392,5 +1502,47 @@ document
 
 </script>
 
+function openInformation() {
+
+    const home = document.getElementById("home");
+    const information = document.getElementById("informationPage");
+
+    home.classList.add("hide");
+
+    setTimeout(() => {
+
+        home.style.display = "none";
+        information.style.display = "block";
+
+        window.scrollTo(0, 0);
+
+        setTimeout(() => {
+            information.classList.add("active");
+        }, 30);
+
+    }, 300);
+}
+
+
+function closeInformation() {
+
+    const home = document.getElementById("home");
+    const information = document.getElementById("informationPage");
+
+    information.classList.remove("active");
+
+    setTimeout(() => {
+
+        information.style.display = "none";
+        home.style.display = "block";
+
+        window.scrollTo(0, 0);
+
+        setTimeout(() => {
+            home.classList.remove("hide");
+        }, 30);
+
+    }, 300);
+}
 </body>
 </html>
