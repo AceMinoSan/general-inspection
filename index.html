@@ -675,6 +675,28 @@ body.dark-mode .theme-toggle {
     background: #333333;
     color: #ffffff;
 }
+body {
+    animation: pageLoad 0.8s ease-out;
+}
+
+@keyframes pageLoad {
+    0% {
+        opacity: 0;
+        transform: scale(0.985);
+        filter: blur(4px);
+    }
+
+    60% {
+        opacity: 0.8;
+        filter: blur(1px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
 </style>
 </head>
 
