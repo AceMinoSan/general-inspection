@@ -1134,25 +1134,43 @@ function openContact() {
     window.location.href =
         "https://discord.gg/gnSXF82rt";
 }
+<script>
+
 /* =========================
    COMPLAINT FORM
 ========================= */
+
+const DISCORD_WEBHOOK_URL = "ВСТАВЬ_СЮДА_НОВЫЙ_WEBHOOK";
+
+
 document
     .getElementById("complaintForm")
-    .addEventListener("submit", function(event) {
+    .addEventListener("submit", async function(event) {
+
         event.preventDefault();
+
+        const button =
+            document.querySelector(".submit-complaint");
+
         const name =
             document.getElementById("complainantName").value.trim();
+
         const contact =
             document.getElementById("contactInfo").value.trim();
+
         const employee =
             document.getElementById("employeeName").value.trim();
+
         const date =
             document.getElementById("incidentDate").value;
+
         const place =
             document.getElementById("incidentPlace").value.trim();
+
         const text =
             document.getElementById("complaintText").value.trim();
+
+
         if (
             !name ||
             !contact ||
@@ -1161,11 +1179,139 @@ document
             !place ||
             !text
         ) {
-            alert(
-                "გთხოვთ შეავსოთ ყველა ველი."
-            );
+
+            alert("გთხოვთ შეავსოთ ყველა ველი.");
+
             return;
+
         }
+
+
+        button.disabled = true;
+
+        button.textContent = "იგზავნება...";
+
+
+        const discordMessage = {
+
+            username: "გენერალური ინსპექცია",
+
+            embeds: [
+
+                {
+                    title: "📋 ახალი საჩივარი",
+
+                    color: 1205104,
+
+                    fields: [
+
+                        {
+                            name: "👤 მომჩივნის სახელი და გვარი",
+                            value: name,
+                            inline: false
+                        },
+
+                        {
+                            name: "📞 საკონტაქტო ინფორმაცია",
+                            value: contact,
+                            inline: false
+                        },
+
+                        {
+                            name: "👮 თანამშრომლის სახელი და გვარი",
+                            value: employee,
+                            inline: false
+                        },
+
+                        {
+                            name: "📅 შემთხვევის თარიღი",
+                            value: date,
+                            inline: true
+                        },
+
+                        {
+                            name: "📍 შემთხვევის ადგილი",
+                            value: place,
+                            inline: true
+                        },
+
+                        {
+                            name: "📝 საჩივრის აღწერა",
+                            value: text,
+                            inline: false
+                        }
+
+                    ],
+
+                    footer: {
+                        text: "საქართველოს შინაგან საქმეთა სამინისტროს გენერალური ინსპექციის დეპარტამენტი"
+                    },
+
+                    timestamp: new Date().toISOString()
+
+                }
+
+            ]
+
+        };
+
+
+        try {
+
+            const response = await fetch(
+                DISCORD_WEBHOOK_URL,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify(discordMessage)
+                }
+            );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Discord returned HTTP " + response.status
+                );
+
+            }
+
+
+            const form =
+                document.getElementById("complaintForm");
+
+            const success =
+                document.getElementById("successMessage");
+
+
+            form.style.display = "none";
+
+            success.style.display = "block";
+
+            window.scrollTo(0, 0);
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            alert(
+                "საჩივრის გაგზავნა ვერ მოხერხდა. გთხოვთ სცადოთ მოგვიანებით."
+            );
+
+            button.disabled = false;
+
+            button.textContent = "საჩივრის გაგზავნა";
+
+        }
+
+    });
+
+</script>
         /*
         ==========================================
         DISCORD CONNECTION
