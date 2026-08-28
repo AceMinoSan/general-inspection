@@ -608,6 +608,26 @@ function openSecretary() {
     }, 300);
 }
 function closeSecretary() {
+    
+}
+
+function openSeniorStaff() {
+
+    const home = document.getElementById("home");
+    const staff = document.getElementById("seniorStaffPage");
+
+    home.classList.add("hide");
+
+    setTimeout(() => {
+
+        home.style.display = "none";
+
+        staff.style.display = "block";
+
+        window.scrollTo(0, 0);
+
+    }, 300);
+}
     const home =
         document.getElementById("home");
     const profile =
