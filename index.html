@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>გენერალური ინსპექციის დეპარტამენტი</title>
 <style>
-/* =========================
-   ОСНОВА САЙТА
-========================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,9 +15,7 @@ body {
     color: #111111;
     font-family: Arial, "Noto Sans Georgian", sans-serif;
 }
-/* =========================
-   ВЕРХНЯЯ СИНЯЯ ПОЛОСА
-========================= */
+/* HEADER */
 .header {
     width: 100%;
     height: 125px;
@@ -29,14 +24,12 @@ body {
     align-items: center;
     padding-left: 55px;
 }
-/* ГЕРБ */
 .emblem {
     width: 82px;
     height: 82px;
     object-fit: contain;
     margin-right: 24px;
 }
-/* ТЕКСТ В ШАПКЕ */
 .header-text {
     color: white;
 }
@@ -49,32 +42,31 @@ body {
     font-size: 22px;
     font-weight: 500;
 }
-/* =========================
-   ОСНОВНАЯ ЧАСТЬ
-========================= */
+/* MAIN */
 .main {
     width: 1100px;
     max-width: 90%;
     margin: 70px auto 100px;
 }
-/* =========================
-   ДИРЕКТОР
-========================= */
+/* DIRECTOR */
 .director {
     display: flex;
     align-items: center;
     width: 850px;
     margin-left: 5%;
     margin-bottom: 75px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
 }
-/* ФОТО ДИРЕКТОРА */
+.director:hover {
+    transform: translateY(-5px);
+}
 .director-photo {
     width: 310px;
     height: 420px;
     object-fit: cover;
     display: block;
 }
-/* ТЕКСТ СПРАВА */
 .director-info {
     margin-left: 55px;
     max-width: 430px;
@@ -92,42 +84,64 @@ body {
     color: #111111;
     font-weight: 400;
 }
-/* =========================
-   ЧЕТЫРЕ СОТРУДНИКА
-========================= */
-.staff {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
-    width: 920px;
-    margin: 0 auto;
+/* PROFILE */
+.profile {
+    display: none;
+    width: 1100px;
+    max-width: 90%;
+    margin: 60px auto 100px;
 }
-/* КАРТОЧКА */
-.staff-card {
+.back {
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: #123b70;
     cursor: pointer;
-    text-align: center;
-    transition: transform 0.25s ease;
+    margin-bottom: 40px;
 }
-.staff-card:hover {
-    transform: translateY(-7px);
+.profile-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 55px;
 }
-/* ФОТО */
-.staff-photo {
-    width: 100%;
-    height: 230px;
+.profile-photo {
+    width: 310px;
+    height: 420px;
     object-fit: cover;
-    display: block;
 }
-/* ДОЛЖНОСТЬ */
-.staff-position {
-    margin-top: 16px;
-    font-size: 15px;
-    line-height: 1.45;
-    color: #111111;
+.profile-info {
+    max-width: 650px;
 }
-/* =========================
-   МОБИЛЬНАЯ ВЕРСИЯ
-========================= */
+.profile-info h1 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+.info-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.info-title {
+    font-weight: 600;
+}
+.biography {
+    margin-top: 45px;
+}
+.biography h2 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.biography p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333333;
+}
+/* MOBILE */
 @media (max-width: 900px) {
     .header {
         height: auto;
@@ -160,28 +174,23 @@ body {
     .director-name {
         font-size: 22px;
     }
-    .staff {
-        width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+    .profile-content {
+        flex-direction: column;
     }
-}
-@media (max-width: 500px) {
-    .staff {
+    .profile-photo {
+        width: 270px;
+        height: 370px;
+    }
+    .info-row {
         grid-template-columns: 1fr;
-    }
-    .staff-photo {
-        height: 300px;
+        gap: 5px;
     }
 }
 </style>
 </head>
 <body>
-<!-- =========================
-     ВЕРХНЯЯ ШАПКА
-========================= -->
+<!-- HEADER -->
 <header class="header">
-    <!-- ТВОЙ ГЕРБ -->
     <img
         src="image.png"
         class="emblem"
@@ -196,18 +205,13 @@ body {
         </div>
     </div>
 </header>
-<!-- =========================
-     ОСНОВНАЯ ЧАСТЬ
-========================= -->
-<main class="main">
-    <!-- =====================
-         ДИРЕКТОР
-    ====================== -->
-    <section class="director">
+<!-- MAIN PAGE -->
+<main class="main" id="home">
+    <section class="director" onclick="openDirector()">
         <img
-            src="director.JPG"
+            src="director.jpg"
             class="director-photo"
-            alt="დირექტორი"
+            alt="გენერალური ინსპექციის დეპარტამენტის დირექტორი"
         >
         <div class="director-info">
             <div class="director-position">
@@ -219,63 +223,94 @@ body {
             </div>
         </div>
     </section>
-    <!-- =====================
-         СОТРУДНИКИ
-    ====================== -->
-    <section class="staff">
-        <!-- ЗАМЕСТИТЕЛЬ №1 -->
-        <div class="staff-card">
-            <img
-                src="images/deputy1.jpg"
-                class="staff-photo"
-                alt="დირექტორის მოადგილე"
-            >
-            <div class="staff-position">
-                გენერალური ინსპექციის
-                დეპარტამენტის დირექტორის
-                მოადგილე
-            </div>
-        </div>
-        <!-- ЗАМЕСТИТЕЛЬ №2 -->
-        <div class="staff-card">
-            <img
-                src="images/deputy2.jpg"
-                class="staff-photo"
-                alt="დირექტორის მოადგილე"
-            >
-            <div class="staff-position">
-                გენერალური ინსპექციის
-                დეპარტამენტის დირექტორის
-                მოადგილე
-            </div>
-        </div>
-        <!-- СЕКРЕТАРЬ №1 -->
-        <div class="staff-card">
-            <img
-                src="images/secretary1.jpg"
-                class="staff-photo"
-                alt="დირექტორის მდივანი"
-            >
-            <div class="staff-position">
-                გენერალური ინსპექციის
-                დეპარტამენტის დირექტორის
-                მდივანი
-            </div>
-        </div>
-        <!-- СЕКРЕТАРЬ №2 -->
-        <div class="staff-card">
-            <img
-                src="images/secretary2.jpg"
-                class="staff-photo"
-                alt="დირექტორის მდივანი"
-            >
-            <div class="staff-position">
-                გენერალური ინსპექციის
-                დეპარტამენტის დირექტორის
-                მდივანი
-            </div>
-        </div>
-    </section>
 </main>
+<!-- DIRECTOR PROFILE -->
+<section class="profile" id="directorProfile">
+    <button class="back" onclick="closeDirector()">
+        ← უკან დაბრუნება
+    </button>
+    <div class="profile-content">
+        <img
+            src="director.jpg"
+            class="profile-photo"
+            alt="ეის მინოსანი"
+        >
+        <div class="profile-info">
+            <h1>ეის მინოსანი</h1>
+            <div class="info-row">
+                <div class="info-title">
+                    სახელი გვარი:
+                </div>
+                <div>
+                    ეის მინოსანი
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-title">
+                    დაბადების თარიღი:
+                </div>
+                <div>
+                    29.06
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-title">
+                    დაბადების ადგილი:
+                </div>
+                <div>
+                    ქ. თბილისი; საქართველო
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-title">
+                    წოდება:
+                </div>
+                <div>
+                    პოლიციის გენერალ-მაიორი
+                </div>
+            </div>
+            <div class="info-row">
+                <div class="info-title">
+                    თანამდებობა:
+                </div>
+                <div>
+                    საქართველოს შინაგან საქმეთა სამინისტროს გენერალური ინსპექციის დეპარტამენტის დირექტორი
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="biography">
+        <h2>ბიოგრაფია</h2>
+        <p>
+            მინოსანი ეის ბესარიონის ძე — გამოცდილი და პროფესიონალი
+            სახელმწიფო მოხელე, რომელსაც გააჩნია მრავალწლიანი გამოცდილება
+            სამართალდამცავ სფეროში.
+            სხვადასხვა ეტაპზე იგი მუშაობდა FGS-ის გენერალური ინსპექციის
+            დეპარტამენტის დირექტორის თანამდებობაზე, სადაც მისი ხელმძღვანელობის
+            პერიოდში დეპარტამენტის საქმიანობა მნიშვნელოვნად გაუმჯობესდა,
+            სამუშაო პროცესები მოწესრიგდა და სამსახურის ეფექტიანობა გაიზარდა.
+            მისი ხელმძღვანელობის პერიოდში განსაკუთრებული ყურადღება ეთმობოდა
+            თანამშრომელთა დისციპლინას, მოქალაქეთა განცხადებებისა და საჩივრების
+            დროულ განხილვას, შიდა კონტროლის გაუმჯობესებასა და სამსახურის
+            პროფესიული სტანდარტების განვითარებას.
+            მიღებული გამოცდილებისა და პროფესიული მიდგომის საფუძველზე,
+            მინოსანი ეის ბესარიონის ძე განაგრძობს საქმიანობას საქართველოს
+            შინაგან საქმეთა სამინისტროს გენერალური ინსპექციის დეპარტამენტის
+            დირექტორის თანამდებობაზე.
+        </p>
+    </div>
+</section>
+<script>
+function openDirector() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("directorProfile").style.display = "block";
+    window.scrollTo(0, 0);
+}
+function closeDirector() {
+    document.getElementById("directorProfile").style.display = "none";
+    document.getElementById("home").style.display = "block";
+    window.scrollTo(0, 0);
+}
+</script>
 </body>
 </html>
